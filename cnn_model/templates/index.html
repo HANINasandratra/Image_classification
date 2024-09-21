@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a148c;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #4a148c;
+        }
+        .upload-button {
+            background-color: #ab47bc;
+            margin-top: 20px;
+        }
+        .save-button, .next-button {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: white;
+        }
+        .icon {
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Classification</h1>
+    
+    <!-- Form to capture image from PiCamera -->
+    <form action="/capture" method="post">
+        <button class="button" type="submit">Capture Image</button>
+    </form>
+
+    <!-- Form to upload image from local file system -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file-upload" class="button upload-button">
+            <span class="icon">📁</span> Upload Image
+        </label>
+        <input id="file-upload" type="file" name="image" style="display:none" onchange="this.form.submit()">
+    </form>
+
+    <!-- Display the result if exists -->
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    <p>Accuracy: {{ accuracy }}%</p>
+    <img src="{{ image_path }}" alt="Captured Image">
+
+    {% endif %}
+
+</body>
+</html>
+

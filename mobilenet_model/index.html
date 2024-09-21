@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+</head>
+<body>
+    <h1>Capture Image</h1>
+    <form action="/capture" method="post">
+        <button type="submit">Capture Image</button>
+    </form>
+
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    <p>Accuracy: {{ accuracy }}%</p>
+    <img src="{{ image_path }}" alt="Captured Image">
+    {% endif %}
+</body>
+</html>
+
