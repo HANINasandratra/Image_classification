@@ -1,7 +1,9 @@
 Classification d'images sur Raspberry Pi
+
 Ce dépôt contient le code d'un projet de classification d'images déployé sur un Raspberry Pi en utilisant des modèles TensorFlow Lite. Le projet consiste à exécuter des modèles d'apprentissage automatique (ML) pour classifier des images capturées via une caméra Pi ou téléchargées par l'utilisateur, avec un accent sur des modèles efficaces en énergie adaptés aux systèmes embarqués.
 
 Table des matières
+
 Présentation du projet
 Modèles utilisés
 Instructions d'installation
